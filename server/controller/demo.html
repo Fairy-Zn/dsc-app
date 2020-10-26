@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr1 = [{
+            cat_id: 1,
+            cat_name: "大家电"
+        }, {
+            cat_id: 2,
+            cat_name: "生活电器"
+        }]
+
+        var arr2 = [{
+            cat_id: 1001,
+            cate_name: "平板电视",
+            parent_id: 1
+        }, {
+            cat_id: 1002,
+            cate_name: "洗衣机",
+            parent_id: 1
+        }, {
+            cat_id: 1003,
+            cate_name: "生活电器11",
+            parent_id: 2
+        }, {
+            cat_id: 1004,
+            cate_name: "生活电器22",
+            parent_id: 2
+        }]
+
+        arr1.forEach(v => {
+            v.child = []
+        })
+
+
+
+        arr1.forEach(v => {
+            arr2.forEach(item => {
+                if (v.cat_id == item.parent_id) {
+                    v.child.push(item)
+                }
+            })
+        })
+        console.log(arr1);
+        // var result = [{
+        //     cat_id: 1,
+        //     cat_name: "大家电",
+        //     child: [{
+        //         cat_id: 1001,
+        //         cate_name: "平板电视",
+        //         parent_id: 1
+        //     }, {
+        //         cat_id: 1002,
+        //         cate_name: "洗衣机",
+        //         parent_id: 1
+        //     }]
+        // }, {
+        //     cat_id: 2,
+        //     cat_name: "生活电器",
+        //     child: [{
+        //         cat_id: 1003,
+        //         cate_name: "生活电器11",
+        //         parent_id: 2
+        //     }, {
+        //         cat_id: 1004,
+        //         cate_name: "生活电器22",
+        //         parent_id: 2
+        //     }]
+        // }]
+    </script>
+</body>
+
+</html>
